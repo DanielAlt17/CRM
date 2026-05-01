@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Premium V2</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Librería gráfica -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- =========================
+     APP PRINCIPAL
+========================= -->
+<div class="app">
+
+    <!-- =========================
+         SIDEBAR
+    ========================= -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>CRM V2</h2>
+            <p>Premium Dashboard</p>
+        </div>
+
+        <nav class="menu">
+
+            <button onclick="cambiarVista('dashboard')">
+                📊 Dashboard
+            </button>
+
+            <button onclick="cambiarVista('clientes')">
+                👤 Clientes
+            </button>
+
+            <button onclick="cambiarVista('ventas')">
+                💰 Ventas
+            </button>
+
+        </nav>
+
+    </aside>
+
+    <!-- =========================
+         CONTENIDO
+    ========================= -->
+    <main class="contenido">
+
+        <!-- =========================
+             DASHBOARD
+        ========================= -->
+        <section id="dashboard" class="vista activa">
+
+            <div class="top-bar">
+                <h1>Dashboard</h1>
+                <p>Resumen general del negocio</p>
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total Ventas</h3>
+                    <p id="totalVentas">$0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Clientes</h3>
+                    <p id="totalClientes">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Ticket Promedio</h3>
+                    <p id="ticketPromedio">$0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Última Venta</h3>
+                    <p id="ultimaVenta">$0</p>
+                </div>
+
+            </div>
+
+            <div class="chart-container">
+                <h3>Ventas por Mes</h3>
+                <canvas id="graficaVentas"></canvas>
+            </div>
+
+        </section>
+
+        <!-- =========================
+             CLIENTES
+        ========================= -->
+        <section id="clientes" class="vista">
+
+            <div class="top-bar">
+                <h1>Clientes</h1>
+                <p>Gestión de clientes registrados</p>
+            </div>
+
+            <!-- Formulario Premium -->
+            <div class="clientes-box">
+
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Nombre"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="apellidos"
+                    placeholder="Apellidos"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    id="telefono"
+                    placeholder="Teléfono (10 dígitos)"
+                    maxlength="10"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Correo electrónico"
+                    required
+                >
+
+                <button onclick="agregarCliente()">
+                    Guardar
+                </button>
+
+            </div>
+
+            <!-- Buscar -->
+            <input
+                type="text"
+                id="buscarCliente"
+                class="buscador"
+                placeholder="Buscar cliente..."
+                oninput="renderClientes()"
+            >
+
+            <!-- Lista -->
+            <div id="listaClientes" class="lista-cards"></div>
+
+        </section>
+
+        <!-- =========================
+             VENTAS
+        ========================= -->
+        <section id="ventas" class="vista">
+
+            <div class="top-bar">
+                <h1>Ventas</h1>
+                <p>Registrar nuevas ventas</p>
+            </div>
+
+            <!-- Caja Premium -->
+            <div class="ventas-box">
+
+                <!-- Buscar -->
+                <input
+                    type="text"
+                    id="buscarVentaCliente"
+                    placeholder="Buscar cliente..."
+                    oninput="buscarClienteVenta()"
+                >
+
+                <!-- Resultados -->
+                <div id="resultadosBusqueda" class="resultados"></div>
+
+                <!-- Cliente elegido -->
+                <div id="clienteBadge" class="cliente-badge">
+                    Ningún cliente seleccionado
+                </div>
+
+                <!-- Monto -->
+                <input
+                    type="number"
+                    id="montoVenta"
+                    placeholder="Monto"
+                    min="1"
+                >
+
+                <!-- Botón -->
+                <button onclick="registrarVenta()">
+                    Registrar Venta
+                </button>
+
+            </div>
+
+            <h3 class="subtitulo">Historial</h3>
+
+            <div id="listaVentas" class="lista-cards"></div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast"></div>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>

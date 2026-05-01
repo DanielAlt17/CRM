@@ -1,0 +1,382 @@
+/* =====================================================
+   CRM PREMIUM V2 - CSS FINAL COMPLETO
+   Diseño limpio, profesional y responsive
+===================================================== */
+
+/* ---------------- RESET ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f172a;
+    color: #ffffff;
+}
+
+/* ---------------- APP ---------------- */
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+.sidebar {
+    width: 250px;
+    background: #111827;
+    padding: 28px 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.logo h2 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.logo p {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 28px;
+}
+
+/* menú */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu button {
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 12px;
+    background: #1e293b;
+    color: white;
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.menu button:hover {
+    background: #334155;
+    transform: translateX(2px);
+}
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+.contenido {
+    flex: 1;
+    padding: 28px;
+}
+
+.vista {
+    display: none;
+}
+
+.vista.activa {
+    display: block;
+}
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+.top-bar {
+    margin-bottom: 24px;
+}
+
+.top-bar h1 {
+    font-size: 34px;
+    margin-bottom: 6px;
+}
+
+.top-bar p {
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+/* =====================================================
+   DASHBOARD CARDS
+===================================================== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.card h3 {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* =====================================================
+   GRAFICA
+===================================================== */
+.chart-container {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 16px;
+    height: 380px;
+}
+
+.chart-container h3 {
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+/* =====================================================
+   FORMULARIOS GENERALES
+===================================================== */
+.clientes-box,
+.ventas-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+/* inputs */
+input {
+    width: 100%;
+    padding: 11px 14px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #111827;
+    font-size: 14px;
+}
+
+/* quitar flechas en number */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    appearance: textfield;
+}
+
+/* botones */
+button {
+    border: none;
+    border-radius: 12px;
+    padding: 11px 14px;
+    background: #4f46e5;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: #4338ca;
+    transform: translateY(-1px);
+}
+
+/* =====================================================
+   BUSCADOR
+===================================================== */
+.buscador {
+    margin-bottom: 18px;
+}
+
+/* =====================================================
+   RESULTADOS BUSQUEDA VENTAS
+===================================================== */
+.resultados {
+    background: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.resultado-item {
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.resultado-item:hover {
+    background: #334155;
+}
+
+/* =====================================================
+   CLIENTE SELECCIONADO
+===================================================== */
+.cliente-badge {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 11px 14px;
+    font-size: 14px;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+}
+
+/* =====================================================
+   LISTAS / TARJETAS
+===================================================== */
+.lista-cards {
+    display: grid;
+    gap: 14px;
+}
+
+.cliente-card,
+.venta-card {
+    background: #1e293b;
+    padding: 18px;
+    border-radius: 16px;
+}
+
+.cliente-card h3,
+.venta-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.cliente-card p,
+.venta-card p {
+    margin-bottom: 6px;
+    color: #e2e8f0;
+    font-size: 14px;
+}
+
+small {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+/* =====================================================
+   ACCIONES
+===================================================== */
+.acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.acciones button {
+    flex: 1;
+}
+
+/* =====================================================
+   SUBTITULO
+===================================================== */
+.subtitulo {
+    margin: 10px 0 14px;
+    font-size: 18px;
+}
+
+/* =====================================================
+   MENSAJES VACÍOS
+===================================================== */
+.mensaje-vacio {
+    background: #1e293b;
+    padding: 18px;
+    border-radius: 14px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* =====================================================
+   TOAST
+===================================================== */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #22c55e;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    z-index: 999;
+    font-size: 14px;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+/* =====================================================
+   RESPONSIVE TABLET
+===================================================== */
+@media (max-width: 900px) {
+
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .menu button {
+        flex: 1;
+        text-align: center;
+    }
+
+    .contenido {
+        padding: 20px;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE MOBILE
+===================================================== */
+@media (max-width: 600px) {
+
+    .top-bar h1 {
+        font-size: 28px;
+    }
+
+    .cards,
+    .clientes-box,
+    .ventas-box {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-container {
+        height: 300px;
+    }
+
+    .acciones {
+        flex-direction: column;
+    }
+
+    .menu button {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
